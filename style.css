@@ -82,7 +82,6 @@ header .logo
 {
     left: -100%;
     display: none;
-    /* scale: 3; */
 }
 
 .first-page .first-page-contents
@@ -163,7 +162,7 @@ header .logo
     box-shadow: 0rem 0rem .5rem var(--alpha-color);
     cursor: pointer;
     font-size: 1.5rem;
-    z-index: 1;
+    z-index: 100;
     transition: .3s linear;
     width: 8rem;
 }
@@ -179,11 +178,9 @@ header .logo
 {
     height: 100vh;
     position: absolute;
-    border: 2px solid red;
     z-index: 10;
     width: 100%;
     right: -100%;
-    /* top:2%; */
     /* display: none; */
     transition: .3s linear;
 }
@@ -204,6 +201,7 @@ header .logo
     align-items: center;
     align-items: center;
     gap: 2.5rem;
+    padding: 3rem 0rem;
 }
 
 .second-page-contents h1
@@ -245,7 +243,7 @@ header .logo
 
 .second-page-contents .planet-container
 {
-    height: 60%;
+    min-height: 60%;
     border: 2px solid var(--alpha-color);
     width: 90%;
     display: flex;
