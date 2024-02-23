@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header>
+        <!-- <a href="#" class="logo"><img src="./images/logo.png" alt=""></a> -->
+        <a href="#" class="logo">RK</a>
+    </header>
+    
+    <div class="bg">
+        <canvas id="canvas"></canvas>
+    </div>
+    <section class="first-page">
+        <div class="first-page-contents">
+
+            <div class="home-planets">
+                <img class="earth" src="./images/earth.png" alt="">
+                <img class="moon" src="./images/moon.png" alt="">
+         </div>
+         <div class="website-intro">
+             <h1>Lets Get Some Knowledge about Planets</h1>
+             <button id="planetExploreBtn" class="btn">Explore</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="second-page">
+
+        <div class="second-page-contents">
+
+            <h1>Planets List</h1>
+            <div class="backToFirstPage">
+                <button class="FrstBckbtn"><i class='bx bx-arrow-back'></i></button>
+            </div>
+            <div class="planet-container">
+                <ol class="allPlanetNames">
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>
+                    <li><a href=""><span class="planetName">Tatooine</span></a></li>           
+            </div>
+            <div class="scndPage-Btns">
+                <button class="btn">Previous</button>
+                <button class="btn">Next</button>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <script src="./canvas.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
