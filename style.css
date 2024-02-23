@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root
+{
+    --alpha-color:#ffee00;
+    --bg-color:#02010f;
+    --font-color:white;
+    --sfont-color:black;
+
+    --btn-border-color:#ffee00;
+}
+
+body
+{
+    min-height: 100vh;
+    width: 100%;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+header
+{
+    /* border: 2px solid red; */
+    padding: 1rem 2rem;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .logo
+{
+   font-size: 1.5rem;
+   text-decoration: none;
+   color: var(--alpha-color);
+   letter-spacing: .2rem;
+}
+
+/* header .logo img
+{
+    height: 15%;
+    width: 12%;
+    z-index: 5;
+} */
+
+.bg
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.bg canvas
+{
+    position: absolute;
+    z-index: -1;
+    position: absolute;
+    /* border: 2px solid red; */
+    /* z-index: 1; */
+    width: 100%;
+    opacity: .5;
+}
+
+.first-page
+{
+    height: 100vh;
+    width: 100%;
+    display: block;
+    transition: 5s linear;
+    position: absolute;
+    left: 0%;
+}
+
+.first-page.closeOpenFrstPage
+{
+    left: -100%;
+    display: none;
+    /* scale: 3; */
+}
+
+.first-page .first-page-contents
+{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.first-page .home-planets
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid aqua; */
+}
+
+.home-planets .earth
+{
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    animation:rotate 60s linear infinite;
+    z-index: 5;
+    opacity: .6;
+}
+
+.home-planets .moon
+{
+    position: absolute;
+    right: -20%;
+    bottom: -25%;
+    height: 40rem;
+    animation:rotate 60s linear infinite;
+    z-index: 5;
+}
+
+@keyframes rotate 
+{
+    0%{
+        rotate: 0deg;
+    }    
+    100%{
+        rotate: 360deg;
+    }    
+}
+
+.first-page .website-intro
+{
+    /* border: 2px solid aqua; */
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.website-intro h1
+{
+    font-size: 2.1rem;
+    letter-spacing: .3rem;
+    font-weight: 800;
+}
+
+.btn
+{
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 2px solid var(--btn-border-color);
+    background: transparent;
+    color: var(--font-color);
+    box-shadow: 0rem 0rem .5rem var(--alpha-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1;
+    transition: .3s linear;
+    width: 8rem;
+}
+
+.btn:hover
+{
+    background: var(--alpha-color);
+    color: var(--sfont-color);
+}
+
+/******************[[[[[[[[[[[[[[[[[[[[[[[[[[[ Second Page section    ]]]]]]]]]]]]]]]****************************/
+.second-page
+{
+    height: 100vh;
+    position: absolute;
+    border: 2px solid red;
+    z-index: 10;
+    width: 100%;
+    right: -100%;
+    /* top:2%; */
+    /* display: none; */
+    transition: .3s linear;
+}
+
+.second-page.openCloseScndPage
+{
+    display: block;
+    right: 0%;
+}
+
+.second-page .second-page-contents
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.second-page-contents h1
+{
+    color: var(--alpha-color);
+    font-size: 3rem;
+}
+
+/* btn back second page starting */
+.second-page-contents .backToFirstPage
+{
+    /* border: 2px solid red; */
+    width: 90%;
+}
+
+.second-page-contents .FrstBckbtn
+{
+    border: 2px solid var(--alpha-color);
+    padding: .7rem;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.second-page-contents .FrstBckbtn:hover
+{
+    color: var(--sfont-color);
+    background: var(--alpha-color);
+}
+
+.FrstBckbtn i
+{
+    font-size: 1.5rem; 
+}
+
+/* btn back second page ending */
+
+.second-page-contents .planet-container
+{
+    height: 60%;
+    border: 2px solid var(--alpha-color);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.planet-container .allPlanetNames
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-x: scroll;
+    height: 100%;
+    width: 100%;
+    top: 3%;
+    padding: .9rem 1.8rem;
+    /* border: 2px solid red; */
+}
+
+.planet-container .allPlanetNames::-webkit-scrollbar 
+{
+    height: .5rem;
+}
+
+.planet-container .allPlanetNames::-webkit-scrollbar-track 
+{
+    background: #363636;
+}
+.planet-container .allPlanetNames::-webkit-scrollbar-thumb 
+{
+    background-color: aqua;
+    border-radius: 6px;
+    /* border: 3px solid aqua; */
+}
+
+.planet-container .allPlanetNames li
+{
+    /* border: 2px solid aqua; */
+    width: fit-content;
+    padding: .1rem 1rem;
+    color: white;
+    margin: 0rem .8rem;
+}
+
+.second-page-contents .scndPage-Btns
+{
+    display: flex;
+    gap: 1rem;
+}
