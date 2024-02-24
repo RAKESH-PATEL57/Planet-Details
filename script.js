@@ -213,13 +213,13 @@ async function residentName(residentUrl)
  
 }
 
-async function fullResData(rkp)
+async function fullResData(fullResUrl)
 {
     // console.log(rkp);
-    const changeFullResData = await fetch(rkp)
+    const changeFullResData = await fetch(fullResUrl)
     const changeFullResDataDetails = await changeFullResData.json();
 
-    console.log(changeFullResDataDetails);
+    // console.log(changeFullResDataDetails);
     currentResidentName.innerText = changeFullResDataDetails.name;
     currentResidentHeight.innerText = changeFullResDataDetails.height;
     currentResidentMass.innerText = changeFullResDataDetails.mass;
