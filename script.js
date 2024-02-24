@@ -40,7 +40,7 @@ prevBtn.addEventListener('click', () => {
     // allPlanetNames.removeChild();
     // console.log(allPlanetNames.removeChild)
     prevUrl();
-    console.log(original_url);
+    // console.log(original_url);
 });
 
 
@@ -107,14 +107,15 @@ async function planetsNames(original_url)
     }
 
     let allPlanetUrl = document.querySelectorAll('.planetUrl');
-    console.log(allPlanetUrl);
+    // console.log(allPlanetUrl);
       
     for(let j=0;j<allPlanetUrl.length;j++)
     {
         allPlanetUrl[j].addEventListener("click",function(press){
             // console.log(press.target.style.color='red');
 
-            thirdPage(press.target, planetsData.results[j].url);
+            // thirdPage(press.target, planetsData.results[j].url);
+            thirdPageDetails(planetsData.results[j].url)
 
         });
     }
@@ -127,17 +128,38 @@ async function planetsNames(original_url)
 let thirdPageSection = document.querySelector('.third-page');
 let currentPlanetName = document.querySelector('#currentPlanetName');
 
+let rotationDetails = document.querySelector('#rotation');
+let orbitDetails = document.querySelector('#orbit');
+let diameterDetails = document.querySelector('#diameter');
+let climateDetails = document.querySelector('#climate');
+let gravityDetails = document.querySelector('#gravity');
+let terrainDetails = document.querySelector('#terrain');
+let waterDetails = document.querySelector('#water');
+let populationDetails = document.querySelector('#population');
+
 let backpagebtn = document.querySelector('.backpagebtn');
 
-function thirdPage(thirdPageChange, currentPlanetUrl)
+async function thirdPageDetails(currentPlanetUrl)
 {
-    thirdPageSection.classList.add('OpenClosetrdPage');
-    secondPage.classList.remove('openCloseScndPage');
+     thirdPageSection.classList.add('OpenClosetrdPage');
+     secondPage.classList.remove('openCloseScndPage');
 
-    currentPlanetName.innerText = thirdPageChange.innerText
+     const thrdPageCntData = await fetch (currentPlanetUrl);
+     const thrdCurrentPlanetDtls = await thrdPageCntData.json();
 
-    console.log(currentPlanetUrl);
+    currentPlanetName.innerText = thrdCurrentPlanetDtls.name;
+    rotationDetails.innerText = thrdCurrentPlanetDtls.rotation_period;
+    orbitDetails.innerText = thrdCurrentPlanetDtls.orbital_period;
+    diameterDetails.innerText = thrdCurrentPlanetDtls.diameter;
+    climateDetails.innerText = thrdCurrentPlanetDtls.climate;
+    gravityDetails.innerText = thrdCurrentPlanetDtls.gravity;
+    terrainDetails.innerText = thrdCurrentPlanetDtls.terrain;
+    waterDetails.innerText = thrdCurrentPlanetDtls.surface_water;
+    populationDetails.innerText = thrdCurrentPlanetDtls.population;
 }
+
+
+
 
 backpagebtn.addEventListener('click', () => {
     
