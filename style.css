@@ -438,6 +438,11 @@ header .logo
     letter-spacing: .1rem;
 }
 
+.cp-details span
+{
+  color: var(--alpha-color);
+}
+
 .third-page .residents
 {
     width: 80%;
