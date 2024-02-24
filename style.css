@@ -23,7 +23,7 @@ body
 {
     min-height: 100vh;
     background: var(--bg-color);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /********* scrolling  *********/
@@ -89,12 +89,13 @@ header .logo
 
 .first-page
 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: block;
     transition: .3s linear;
     position: absolute;
     right: 0%;
+    overflow: hidden;
 }
 
 .first-page.closeOpenFrstPage
@@ -164,6 +165,7 @@ header .logo
     gap: 1rem;
     margin-left:0rem;
     transition: .3s linear;
+    z-index: 100;
 }
 
 /* .first-page .website-intro.closeOpenWebsiteIntro
@@ -361,7 +363,7 @@ header .logo
 /******************[[[[[[[[[[[[[[[[[[[[[[[[[[[ Second Page section    ]]]]]]]]]]]]]]]****************************/
 .third-page
 {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     position: absolute;
     display: flex;
@@ -372,7 +374,7 @@ header .logo
     z-index: 100;
     gap: 2rem;
     opacity: 0;
-    left: -100%;
+    left: 100%;
     transition: .3s linear;
 }
 
@@ -447,6 +449,9 @@ header .logo
 {
     width: 80%;
     height: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .residents .residents-container
@@ -454,13 +459,14 @@ header .logo
     display: flex;
     justify-content: space-between;
     border: 2px solid aqua;
-    height: 80%;
+    height: 15rem;
 }
 
 .residents-container .resident-half-details
 {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding:.5rem 1rem;
     /* border: 2px solid red; */
     width: 80%;
     overflow-x: scroll;
@@ -473,7 +479,17 @@ header .logo
     align-items: center;
     flex-direction: column;
     font-size: .8rem;
-    gap: 1rem;
+    gap: 2rem;
+    width: 15rem;
+    border: 2px solid rgb(85, 67, 67);
+    padding: 0rem .5rem;
+}
+
+.box .residentName
+{
+    text-align: center;
+    /* border: 2px solid red; */
+    height: 3rem;
 }
 
 .box .btn 
@@ -497,4 +513,55 @@ header .logo
 {
     color: var(--alpha-color);
     text-align: center;
+}
+
+
+/*************************************   Making Responssive   ************************************/
+@media(max-width:470px)
+{
+    html
+    {
+        font-size: 90%;
+    }
+
+    .third-page
+    {
+        min-height: 100vh;
+        padding: 5rem 1rem;
+    }
+
+    .third-page .backpagebtn
+    {
+        text-align: center;
+    }
+    
+    .current-planet-details
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+    .current-planet-details .cp-details
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    .residents-container .resident-half-details
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding:.5rem 1rem;
+        /* border: 2px solid red; */
+        width: 60%;
+        overflow: scroll;
+        font-size: 1rem;
+    }
+
+    .resident-half-details .box
+    {
+        width: 6rem;
+    }
 }
