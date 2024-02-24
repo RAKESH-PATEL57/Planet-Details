@@ -23,8 +23,9 @@ body
 {
     height: 100vh;
     background: var(--bg-color);
-    /* overflow: hidden; */
     overflow-x: hidden;
+    /* border: 2px solid red; */
+    width: 100vw;
 }
 
 html
@@ -101,8 +102,7 @@ header .logo
     display: block;
     transition: .3s linear;
     position: absolute;
-    right: 0%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     z-index: 100;
     pointer-events: auto;
     overflow:hidden;
@@ -110,7 +110,6 @@ header .logo
 
 .first-page.closeOpenFrstPage
 {
-    right: -100%;
     opacity: 0;
     pointer-events: none;
 }
@@ -227,8 +226,6 @@ header .logo
     position: absolute;
     z-index: 10;
     width: 100%;
-    right: -100%;
-    /* display: none; */
     transition: .3s linear;
     opacity: 0;
     pointer-events: none;
@@ -236,8 +233,6 @@ header .logo
 
 .second-page.openCloseScndPage
 {
-    /* display: block; */
-    right: 0%;
     opacity: 1;
     pointer-events: auto;
 }
@@ -253,7 +248,7 @@ header .logo
     align-items: center;
     gap: 1rem;
     padding: 8rem 0rem 0rem 0rem;
-    border: 2px solid aqua;
+    /* border: 2px solid aqua; */
 }
 
 .second-page-contents h1
@@ -392,16 +387,14 @@ header .logo
     z-index: 100;
     gap: 2rem;
     opacity: 0;
-    left: 100%;
     transition: .3s linear;
     pointer-events: none;
-    border: 2px solid aqua;
+    /* border: 2px solid aqua; */
 }
 
 .third-page.OpenClosetrdPage
 {
     opacity: 1;
-    left: 0%;
     pointer-events: auto;
 }
 
@@ -592,7 +585,7 @@ header .logo
     }
 }
 
-@media(max-width:700px)
+@media (max-width:700px)
 {
     .residents-container .resident-half-details
     {
@@ -615,7 +608,7 @@ header .logo
 
 }
 
-@media(max-width:600px)
+@media (max-width:600px)
 {
     
     .home-planets .earth
@@ -626,7 +619,7 @@ header .logo
 
 }
 
-@media(max-width:480px)
+@media (max-width:480px)
 {
     html
     {
