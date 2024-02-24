@@ -3,24 +3,43 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    /* list-style: none; */
 }
 
 :root
 {
     --alpha-color:#ffee00;
+    --alpha2-color:aqua;
     --bg-color:#02010f;
     --font-color:white;
     --sfont-color:black;
-
+    
+    --planet-border-color:#363636;
+    --planet-name-scolor:aqua;
     --btn-border-color:#ffee00;
 }
 
 body
 {
     min-height: 100vh;
-    width: 100%;
     background: var(--bg-color);
     overflow: hidden;
+}
+
+/********* scrolling  *********/
+::-webkit-scrollbar 
+{
+    height: .5rem;
+}
+
+::-webkit-scrollbar-track 
+{
+    background: #101010;
+}
+::-webkit-scrollbar-thumb 
+{
+    background-color: aqua;
+    border-radius: 6px;
 }
 
 header
@@ -73,15 +92,16 @@ header .logo
     height: 100vh;
     width: 100%;
     display: block;
-    transition: 5s linear;
+    transition: .3s linear;
     position: absolute;
-    left: 0%;
+    right: 0%;
 }
 
 .first-page.closeOpenFrstPage
 {
-    left: -100%;
-    display: none;
+    right: -100%;
+    /* display: none; */
+    opacity: 0;
 }
 
 .first-page .first-page-contents
@@ -142,7 +162,16 @@ header .logo
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    margin-left:0rem;
+    transition: .3s linear;
 }
+
+/* .first-page .website-intro.closeOpenWebsiteIntro
+{
+    margin-left:10rem;
+    /* display: none; 
+    opacity: 0;
+} */
 
 .website-intro h1
 {
@@ -183,12 +212,14 @@ header .logo
     right: -100%;
     /* display: none; */
     transition: .3s linear;
+    opacity: 0;
 }
 
 .second-page.openCloseScndPage
 {
-    display: block;
+    /* display: block; */
     right: 0%;
+    opacity: 1;
 }
 
 .second-page .second-page-contents
@@ -257,7 +288,8 @@ header .logo
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 1rem; */
+    row-gap: .8rem;
     overflow-x: scroll;
     height: 100%;
     width: 100%;
@@ -266,33 +298,198 @@ header .logo
     /* border: 2px solid red; */
 }
 
-.planet-container .allPlanetNames::-webkit-scrollbar 
-{
-    height: .5rem;
-}
-
-.planet-container .allPlanetNames::-webkit-scrollbar-track 
-{
-    background: #363636;
-}
-.planet-container .allPlanetNames::-webkit-scrollbar-thumb 
-{
-    background-color: aqua;
-    border-radius: 6px;
-    /* border: 3px solid aqua; */
-}
-
 .planet-container .allPlanetNames li
 {
-    /* border: 2px solid aqua; */
+    border: 2px solid var(--planet-border-color);
+    border-radius: 1rem;
     width: fit-content;
-    padding: .1rem 1rem;
+    padding: .3rem 1rem;
     color: white;
     margin: 0rem .8rem;
+    color: var(--planet-name-scolor);
+    cursor: pointer;
+}
+
+/* li a
+{  
+    text-decoration: none;
+   
+} */
+
+/* li.loading
+{
+    position: relative;
+}
+
+.loading::before
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: '';
+    z-index: 1000;
+    inset: 0;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #c7c7c7, #585858, #8b8b8b);
+    background-size:200%;
+    animation: loading .5s alternate infinite;
+}
+
+@keyframes loading
+{
+    0%{
+        background-position: 0% 200%;
+    }
+    100%{
+        background-position: 200% -200%;
+    }
+} */
+
+
+.planet-container .allPlanetNames li:hover
+{
+    color: var(--planet-name-scolor);
+    box-shadow: 0rem 0rem .5rem var(--alpha2-color);
 }
 
 .second-page-contents .scndPage-Btns
 {
     display: flex;
     gap: 1rem;
+}
+
+/******************[[[[[[[[[[[[[[[[[[[[[[[[[[[ Second Page section    ]]]]]]]]]]]]]]]****************************/
+.third-page
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    z-index: 100;
+    gap: 2rem;
+    opacity: 0;
+    left: -100%;
+    transition: .3s linear;
+}
+
+.third-page.OpenClosetrdPage
+{
+    opacity: 1;
+    left: 0%;
+}
+
+.third-page #currentPlanetName
+{
+    color: var(--alpha-color);
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+/* back batton start */
+
+.third-page .backpagebtn
+{
+    width: 80%;
+}
+
+.backpagebtn .backBtn
+{
+    border: 2px solid var(--alpha-color);
+    padding: .8rem;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.backpagebtn .backBtn:hover
+{
+    color: var(--sfont-color);
+    background: var(--alpha-color);
+}
+
+.backBtn i
+{
+    font-size: 1.6rem; 
+}
+
+/* back batton end  */
+
+.third-page .current-planet-details
+{
+    /* border: 2px solid red; */
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 15rem; */
+}
+
+.current-planet-details .cp-details
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    letter-spacing: .1rem;
+}
+
+.third-page .residents
+{
+    width: 80%;
+    height: 30%;
+}
+
+.residents .residents-container
+{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid aqua;
+    height: 80%;
+}
+
+.residents-container .resident-half-details
+{
+    display: flex;
+    gap: 2rem;
+    /* border: 2px solid red; */
+    width: 80%;
+    overflow-x: scroll;
+}
+
+.resident-half-details .box
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: .8rem;
+    gap: 1rem;
+}
+
+.box .btn 
+{
+    font-size: 1rem;
+    /* z-index: 100; */
+}
+
+.residents-container .resident-full-details
+{
+    border: 2px solid aqua;
+    width: 19%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0rem .8rem;
+    /* align-items: center; */
+}
+
+.resident-full-details #current-resident-name
+{
+    color: var(--alpha-color);
+    text-align: center;
 }
